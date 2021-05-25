@@ -1,3 +1,4 @@
+/*INCOMPLETO**/
 #include <gtk/gtk.h>
 #include <stdio.h>
 void mostrar()//Mostra o Formulario 
