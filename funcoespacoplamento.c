@@ -6,12 +6,21 @@ typedef struct
   char palavra[200];
 }necessario;
 
-void mudar ()
+void mudar ()//Criou um novo Arquivo
 {
+
   FILE *farq;
+  char word[200];
   farq = fopen("newform.txt","w");
+  for(int i = 0;i < 7;i++)
+  {
+    scanf("%s",word);
+    fprintf(farq,"%s",word);
+  }
+
+  fclose(farq);
 }
-int mostrar(int i)
+int mostrar(int i)//Printar o Arquivo txt
 {
 
 
@@ -33,7 +42,7 @@ int mostrar(int i)
   return(i);
 }
 
-void editar(int i )
+void editar(int i )//Alocando o valor de cada linha num array de struct que tem uma instancia de String
 {
   int n = mostrar(0);
   necessario func[n];
@@ -46,8 +55,7 @@ void editar(int i )
   {
     fgets(singleline,70,fpointer);
     strcpy(func[i].palavra,singleline);
-    printf("%s\n",func[i].palavra);
-
+    //printf("%s\n",func[i].palavra);
     i = i + 1;
   }
 
